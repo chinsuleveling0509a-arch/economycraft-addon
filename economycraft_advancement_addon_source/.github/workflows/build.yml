@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Setup Java
@@ -18,20 +18,14 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Grant execute permission
-        run: chmod +x gradlew || true
-
       - name: Build mod
         run: |
-          if [ -f gradlew ]; then
-            ./gradlew build
-          else
-            gradle build
-          fi
+          cd economycraft_advancement_addon_source
+          chmod +x gradlew || true
+          ./gradlew build || gradle build
 
       - name: Upload jar
         uses: actions/upload-artifact@v3
         with:
           name: minecraft-mod
-          path: |
-            **/build/libs/*.jar
+          path: economycraft_advancement_addon_source/build/libs/*.jar
