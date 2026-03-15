@@ -25,7 +25,7 @@ jobs:
           ./gradlew build || gradle build
 
       - name: Upload jar
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: minecraft-mod
           path: economycraft_advancement_addon_source/build/libs/*.jar
