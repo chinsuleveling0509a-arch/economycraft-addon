@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "economyaddon",
+  "version": "${version}",
+  "name": "EconomyCraft Advancement Shop Guard",
+  "description": "Blocks shop purchases if player hasn't unlocked required advancements.",
+  "authors": [
+    "Generated"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.economyaddon.EconomyAddon"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*",
+    "minecraft": "1.20.1"
+  }
+}
